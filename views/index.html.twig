@@ -1,0 +1,17 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+{% for post in site.posts %}
+<article>
+    <h2>{{ post.title }}</h2>
+    
+    {% include '_post_info.html.twig' %}
+
+    {{ post.excerpt | raw }}
+
+    <p><a href="{{ url(post) }}">Read more...</a></p>
+</article>
+{% endfor %}
+
+{% endblock %}

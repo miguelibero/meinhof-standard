@@ -1,0 +1,24 @@
+site:
+    info:
+        name: 'Meinhof site'
+        slogan: 'a website build using meinhof'
+        disqus_shortname: null
+    urls:
+        post: 'post/{date}/{slug}.html'
+        page: '{slug}.html'
+        category: 'categories/{slug}.html'
+    post:
+        view: post
+        info:
+            author: 'Joe Schmoe'
+            author_email: joe@schmoe.com
+translation:
+    default_locale: null
+    locales: {  }
+filesystem:
+    pages:
+        - index
+    assets: {  }
+    categories:
+        default:
+            name: Default

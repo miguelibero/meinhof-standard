@@ -1,0 +1,9 @@
+<div class="info">
+written by {{ post.info.author }}
+at {{ post.updated | date('Y-m-d H:i') }}
+{% if post.categories %}
+in {% for cat in post.categories %}
+<a href="{{ url(cat) }}">{{ cat }}</a>
+{% endfor %}
+{% endif %}
+</div>

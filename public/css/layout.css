@@ -1,0 +1,23 @@
+body {
+	margin: 0 auto;
+	width: 900px;
+	font-family: Arial, sans-serif;
+}
+
+header h1 {
+    margin-bottom: 0;
+}
+
+header .slogan {
+    font-size: small;
+    color: #999;
+}
+
+article h2 {
+    margin-bottom: 0;
+}
+
+article .info {
+    font-size: small;
+    color: #999;
+}

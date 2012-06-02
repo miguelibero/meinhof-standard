@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ site.info.name }}{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% javascripts output='js/layout.js'
+    'js/layout.js'
+%}
+<script src="{{ url(asset_url) }}" type="text/javascript"></script>
+{% endjavascripts %}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% stylesheets output='css/layout.css'
+    'css/layout.css'
+%}
+<link rel="stylesheet" href="{{ url(asset_url) }}" type="text/css" media="all" />
+{% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+<header>
+    <h1>{{ site.info.name }}</h1>
+    <div class="slogan">{{ site.info.slogan }}</div>
+</header>
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+<footer>
+powered by <a href="http://github.com/miguelibero/meinhof">Meinhof</a>
+</footer>
+{% endblock %}
