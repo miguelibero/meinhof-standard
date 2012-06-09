@@ -11,5 +11,16 @@
         "twig/twig":                	"1.8.*",
         "kriswallsmith/assetic":    	"1.1.*",
         "dflydev/markdown":         	"1.0.*"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Meinhof\\Composer\\ScriptHandler::onInstall"
+        ],
+        "post-update-cmd": [
+            "Meinhof\\Composer\\ScriptHandler::onUpdate"
+        ]
+    },    
+    "config": {
+        "bin-dir": "bin/"
     }
 }
