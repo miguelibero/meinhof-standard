@@ -1,6 +1,6 @@
 {
     "name": "miguelibero/meinhof-standard",
-    "description": "this is the meinhof standard site",
+    "description": "this is the meinhof standard distribution",
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -10,7 +10,8 @@
         "symfony/yaml":             	"2.1.*",        
         "twig/twig":                	"1.8.*",
         "kriswallsmith/assetic":    	"1.1.*",
-        "dflydev/markdown":         	"1.0.*"
+        "dflydev/markdown":         	"1.0.*",
+        "symfony/translation":          "2.1.*"
     },
     "scripts": {
         "post-install-cmd": [
