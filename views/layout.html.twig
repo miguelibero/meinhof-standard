@@ -22,7 +22,7 @@
 
 {% block body %}
 <header>
-    <h1>{{ site.info.name }}</h1>
+    <h1><a href="{{ url(site.pages.index) }}">{{ site.info.name }}</a></h1>
     <div class="slogan">{{ site.info.slogan }}</div>
 </header>
 <div id="content">

@@ -2,9 +2,11 @@
 
 {% block content %}
 
-{% for post in site.posts %}
+<h2>{{ category.name }}</h2>
+
+{% for post in category.posts %}
 <article>
-    <h2 class="title">{{ post.title }}</h2>
+    <h3 class="title">{{ post.title }}</h3>
     
     {% include '_post_info.html.twig' %}
 
