@@ -11,7 +11,7 @@
         "twig/twig":                	"1.8.*",
         "kriswallsmith/assetic":    	"1.1.*",
         "dflydev/markdown":         	"1.0.*",
-        "symfony/translation":          "2.1.*"
+        "symfony/translation":          "2.1.0-RC1"
     },
     "scripts": {
         "post-install-cmd": [
