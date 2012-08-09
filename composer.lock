@@ -1,5 +1,5 @@
 {
-    "hash": "d6f123f3d9d020499381f0b78fb632cf",
+    "hash": "ca664be8e641f7a38a9613bf0257515b",
     "packages": [
         {
             "package": "dflydev/markdown",
@@ -28,8 +28,8 @@
         {
             "package": "miguelibero/meinhof",
             "version": "dev-master",
-            "source-reference": "f2b1c1fb90bb76ffcdb41ca2890cddc5e3bab0d6",
-            "commit-date": "1344535949"
+            "source-reference": "71eb55b5d6894c57dd1295a30fae3a2ab5b5ea7a",
+            "commit-date": "1344539164"
         },
         {
             "package": "symfony/config",
@@ -117,7 +117,15 @@
         },
         {
             "package": "symfony/translation",
-            "version": "v2.1.0-RC1"
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/translation",
+            "version": "dev-master",
+            "source-reference": "v2.1.0-RC1",
+            "commit-date": "1343512949"
         },
         {
             "package": "symfony/yaml",
@@ -140,9 +148,8 @@
     "aliases": [
 
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
-        "miguelibero/meinhof": 20,
-        "symfony/translation": 5
+        "miguelibero/meinhof": 20
     }
 }

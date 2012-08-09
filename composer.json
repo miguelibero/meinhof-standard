@@ -4,6 +4,7 @@
     "autoload": {
         "psr-0": { "": "src/" }
     },
+    "minimum-stability": "dev",
     "require": {
         "php":                          ">=5.3.2",
         "miguelibero/meinhof":          "master-dev",
@@ -11,7 +12,7 @@
         "twig/twig":                	"1.8.*",
         "kriswallsmith/assetic":    	"1.1.*",
         "dflydev/markdown":         	"1.0.*",
-        "symfony/translation":          "2.1.0-RC1"
+        "symfony/translation":          "2.1.*"
     },
     "scripts": {
         "post-install-cmd": [
