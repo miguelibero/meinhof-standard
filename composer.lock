@@ -28,8 +28,8 @@
         {
             "package": "miguelibero/meinhof",
             "version": "dev-master",
-            "source-reference": "0c0f772a179ec218ea2d0cf5f9a1bee2844db125",
-            "commit-date": "1344543933"
+            "source-reference": "675c4e362477ec23cfe4fecdfd3e558b45b78747",
+            "commit-date": "1344839635"
         },
         {
             "package": "symfony/config",
@@ -52,8 +52,8 @@
         {
             "package": "symfony/console",
             "version": "dev-master",
-            "source-reference": "d68f45aaf4f5d074c3ac7c0f2d27951a11ecc04c",
-            "commit-date": "1344326863"
+            "source-reference": "3b66f1056f5ac37146d3b755964e8a43a205f2f5",
+            "commit-date": "1344349441"
         },
         {
             "package": "symfony/dependency-injection",
@@ -64,8 +64,8 @@
         {
             "package": "symfony/dependency-injection",
             "version": "dev-master",
-            "source-reference": "v2.1.0-RC1",
-            "commit-date": "1343997870"
+            "source-reference": "98fa735a7ef5dc07c43bfe6faa4367a983b6ba6f",
+            "commit-date": "1344599303"
         },
         {
             "package": "symfony/event-dispatcher",
@@ -76,7 +76,7 @@
         {
             "package": "symfony/event-dispatcher",
             "version": "dev-master",
-            "source-reference": "v2.1.0-RC1",
+            "source-reference": "v2.1.0-BETA4",
             "commit-date": "1342739894"
         },
         {
