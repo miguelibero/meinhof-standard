@@ -1,7 +1,3 @@
 vendor
-config
-web
 php-cs-fixer.phar
 composer.phar
-meinhof.phar
-bin/meinhof

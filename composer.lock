@@ -28,8 +28,8 @@
         {
             "package": "miguelibero/meinhof",
             "version": "dev-master",
-            "source-reference": "899ddb0580cfbe736a7a437056140864f9f307a1",
-            "commit-date": "1344954021"
+            "source-reference": "3c1c57c481758b819be48dbc453d4b1206fc468f",
+            "commit-date": "1344956168"
         },
         {
             "package": "symfony/config",
