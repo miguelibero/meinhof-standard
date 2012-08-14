@@ -28,8 +28,8 @@
         {
             "package": "miguelibero/meinhof",
             "version": "dev-master",
-            "source-reference": "675c4e362477ec23cfe4fecdfd3e558b45b78747",
-            "commit-date": "1344839635"
+            "source-reference": "899ddb0580cfbe736a7a437056140864f9f307a1",
+            "commit-date": "1344954021"
         },
         {
             "package": "symfony/config",
@@ -40,8 +40,8 @@
         {
             "package": "symfony/config",
             "version": "dev-master",
-            "source-reference": "v2.1.0-RC1",
-            "commit-date": "1343512949"
+            "source-reference": "f68ad44f3ee1603ce96387bacba0ecba488c2a33",
+            "commit-date": "1344599303"
         },
         {
             "package": "symfony/console",
