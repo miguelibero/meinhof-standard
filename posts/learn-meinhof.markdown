@@ -266,7 +266,7 @@ something like:
         <a href="{{ project.url }}">{{ project.title }}</a>
         <p>{{ project.description }}</p>
     </div>
-    {% endfor}
+    {% endfor %}
 
 There are a lot more things you can do with meinhof!
 For more detailed info please look at the
