@@ -73,11 +73,11 @@ The general site configuration is stored in `config/config.yml`
 
 To add a global variable, add it to the `config/config.yml` file.
 
-site:
-    info:
-        name: miguel.ibero.me
-        slogan: 'site.slogan'
-        disqus_shortname: miguel-ibero-me
+    site:
+        info:
+            name: miguel.ibero.me
+            slogan: 'site.slogan'
+            disqus_shortname: miguel-ibero-me
 
 Then you can access it in the template through the `site` variable.
 

@@ -37,7 +37,7 @@ article .info {
 }
 
 footer {
-    margin-top: 10px;
+    margin: 10px 0;
     border-top: 1px solid #CCC;
     padding-top: 10px;
     font-size: small;
