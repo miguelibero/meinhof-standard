@@ -1,3 +1,6 @@
-vendor
+/vendor
 php-cs-fixer.phar
 composer.phar
+/web
+/bin
+/config
