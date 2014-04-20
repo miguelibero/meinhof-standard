@@ -135,12 +135,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/miguelibero/meinhof.git",
-                "reference": "30244b6156fa9217d90a2c6ad7134705e014e4e0"
+                "reference": "a9506972735fe63003a84c47f41ac6604a92ba8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/miguelibero/meinhof/zipball/30244b6156fa9217d90a2c6ad7134705e014e4e0",
-                "reference": "30244b6156fa9217d90a2c6ad7134705e014e4e0",
+                "url": "https://api.github.com/repos/miguelibero/meinhof/zipball/a9506972735fe63003a84c47f41ac6604a92ba8f",
+                "reference": "a9506972735fe63003a84c47f41ac6604a92ba8f",
                 "shasum": ""
             },
             "require": {
@@ -190,7 +190,7 @@
                 "jekyll",
                 "meinhof"
             ],
-            "time": "2014-04-20 16:21:29"
+            "time": "2014-04-20 17:05:24"
         },
         {
             "name": "symfony/config",
