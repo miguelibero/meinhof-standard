@@ -1,12 +1,14 @@
 ---
-view: post
-title: Learn how to maintain your site with Meinhof
+title: Working with meinhof
+updated: 04/08/2012
+publish: true
 categories:
-    - meinhof
+    - symfony
 ---
-Welcome to your new meinhof blog!
-
-This content is generated using [Markdown](http://daringfireball.net/projects/markdown/syntax).
+I've written a static website generator in php using [symfony components](http://symfony.com/components)
+called [meinhof](http://github.com/miguelibero/meinhof/).
+It's still in development but this site is already build using it.
+This post shows some of it's features.
 
 <!-- more -->
 
@@ -15,7 +17,7 @@ This content is generated using [Markdown](http://daringfireball.net/projects/ma
 To install it use [composer](http://getcomposer.org/)
 
     curl -s http://getcomposer.org/installer | php
-    php composer.phar create-project miguelibero/meinhof-standard path/to/install
+    php composer.phar -sdev create-project miguelibero/meinhof-standard path/to/install
 
 After downloading all the dependencies you will be asked some basic
 questions about your site and the first version will be generated.
@@ -32,15 +34,17 @@ The basic structure of a meinhof site is the following
 * `public` site assets processed by [assetic](https://github.com/kriswallsmith/assetic)
 * `views` the site templates
 * `web` the generated website
+* `src` custom php classes
 * `translations` translations to various languages
 * `vendor` all the needed libraries are managed by [composer](http://getcomposer.org/)
 
 #### Writing blog posts
 
 Each post is a file in the `posts` directoy. Ths standard configuration
-includes a [yaml front matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter)
+includes a [yaml front matter](http://jekyllrb.com/docs/frontmatter/)
 (like in [jekyll](https://github.com/mojombo/jekyll)) that defines the data for the post.
 After this header you add the post body, by default using [markdown](http://www.darkcoding.net/software/markdown-quick-reference/).
+
 For example:
 
     ---
@@ -81,7 +85,7 @@ To add a global variable, add it to the `config/config.yml` file.
 
 Then you can access it in the template through the `site` variable.
 
-    {{ site.info.disquis_shortname }}
+    {{ site.info.disqus_shortname }}
 
 #### Multiple languages
 
@@ -182,7 +186,7 @@ By default meinhof comes with the models for `page`, `post` and `category`.
 But it is also possible to add other data, for example `project` with data about 
 your own projects.
 
-The first thing you need to do is write the model class.
+The first thing you need to do is write the model class in the `src` folder.
 
     class Project
     {
@@ -236,7 +240,7 @@ file.
             $data = Yaml::parse(file_get_contents($path));
             foreach($data as $row) {
                 $this->models[] = new Project(
-                    $row['title'], $row['url'], $row['description'])
+                    $row['title'], $row['url'], $row['description']);
             }
         }
 
@@ -250,13 +254,23 @@ Now inject this new loader as a service to the dependency container.
 
     <services>
         <service id="model.loader.project" class="ProjectLoader">
-            <argument>%filesystem.paths.config%/projects.yml</argument>
+            <argument>%filesystem.paths.content%/projects.yml</argument>
             <tag name="model.loader"/>
         </service>    
     </services>
 
 The special `model.loader` tag tells meinhof to add all the projects
 to the `site` variable inside of your views.
+
+Now write the info of your projects inside the `content/projects.yml`
+file:
+
+    - title: Meinhof
+      url: https://github.com/miguelibero/meinhof
+      description: static site generator in PHP 5.3 using symfony components
+    - title: mvcgame
+      url: https://github.com/miguelibero/mvcgame
+      description: model view controller c++11 2d game library
 
 That's it! Now you can access the loaded projects from any page using
 something like:
@@ -268,10 +282,75 @@ something like:
     </div>
     {% endfor %}
 
+#### Adding new pages to show the models
+
+First of all, add the following services.
+
+    <service id="url_helper.project" class="%url_helper.type.class%">
+        <argument>%site.urls.project%</argument>
+        <tag name="url_helper" class="Project" />
+    </service>
+    <service id="action.update_projects" class="%action.update_models.class%">
+        <argument type="service" id="model.loader.project"/>
+        <argument type="service" id="exporter"/>
+        <argument type="service" id="output"/>
+        <argument type="collection">
+            <argument key="site" type="service" id="site" />
+        </argument>
+        <tag name="event_listener" event="update" method="take"/>
+    </service>
+
+The first one adds an url helper that will enable you to link to your new model pages. The second one adds an update projects action that will create the project pages when updating your site.
+
+Add an url definition to your site config:
+
+    site:
+        urls:
+            project: 'project/{slug}.html'
+
+Modify your model class to add a slug and a view templating key:
+
+    class Project
+    {
+        /* ... */
+
+        public function getSlug()
+        {
+            return preg_replace('/[^a-z0-9]/','-', strtolower($this->title));
+        }
+
+        public function getViewTemplatingKey()
+        {
+            return 'project';
+        }
+    }
+
+Create a new view with the name `project.html.twig` in the views folder.
+
+    {% extends "layout.html.twig" %}
+
+    {% block title %}{{ parent() }} - Projects - {{ project.title }}{% endblock %}
+
+    {% block content %}
+    <article>
+        <h2 class="title">{{ project.title }}</h2>
+        <p>{{ project.description }}</p>
+        <p><a href="{{ project.url }}">Visit</a></p>
+    </article>
+    {% endblock %}
+
+
+Linking to your model pages is now easy using the url helper
+
+    {% for project in site.projects %}
+    <div class="project">
+        <a href="{{ url(project) }}">{{ project.title }}</a>
+    </div>
+    {% endfor %}
+
 There are a lot more things you can do with meinhof!
 For more detailed info please look at the
 [meinhof](https://github.com/miguelibero/meinhof),
 [meinhof-standard](https://github.com/miguelibero/meinhof-standard)
 and [miguel.ibero.me](https://github.com/miguelibero/miguel.ibero.me)
 repositories.
-

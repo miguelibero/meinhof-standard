@@ -1,0 +1,6 @@
+- title: Meinhof
+  url: https://github.com/miguelibero/meinhof
+  description: static site generator in PHP 5.3 using symfony components
+- title: mvcgame
+  url: https://github.com/miguelibero/mvcgame
+  description: model view controller c++11 2d game library

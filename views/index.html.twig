@@ -14,4 +14,12 @@
 </article>
 {% endfor %}
 
+<h2>Projects</h2>
+
+{% for project in site.projects %}
+<div class="project">
+    <a href="{{ url(project) }}">{{ project.title }}</a>
+</div>
+{% endfor %}
+
 {% endblock %}
